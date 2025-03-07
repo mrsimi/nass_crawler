@@ -27,6 +27,9 @@ def scrape_email(i):
         for link in links:
             if 'Email' in link.text:
                 clean_text = " ".join(link.text.split()).replace("Email:", '').strip()
+            
+            # if 'Phone' in link.text and '{{mp_number}}' not in link.text:
+            #     clean_text = " ".join(link.text.split()).replace("Phone Number:", '').strip()
 
         print(url, i, isSenator, clean_text, senator_name)
         
